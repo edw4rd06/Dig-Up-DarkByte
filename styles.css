@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;  /* Dark background */
+    color: #e0e0e0;  /* Light text color */
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#title-screen {
+    background-color: #1e1e1e;  /* Slightly lighter dark background */
+    transition: opacity 2s ease;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#title-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#game {
+    display: none;
+}
+
+.room {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    background-color: #1e1e1e;  /* Slightly lighter dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.room.active {
+    display: flex;
+}
+
+.clue-image-container {
+    display: flex; /* Flex container */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.error {
+    color: #ff4c4c;  /* Red color for errors */
+    margin-top: 10px;
+}
+
+canvas {
+    border: 1px solid #444;  /* Darker border for the canvas */
+    margin-top: 20px;
+    max-width: 100%;
+    height: auto;
+    background-color: #333;  /* Darker background for the game area */
+}
+
+button {
+    background-color: #444;  /* Darker button background */
+    color: #e0e0e0;  /* Light text color */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;  /* Slightly lighter on hover */
+}
+
+input[type="password"] {
+    background-color: #2b2b2b;  /* Darker input background */
+    color: #e0e0e0;  /* Light text color */
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: calc(100% - 22px);  /* Adjust for padding */
+}
+
+h1, p {
+    text-align: center;
+}
+
+#notes-section {
+    display: flex; /* Flex container */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    margin-bottom: 20px;
+}
+
+#notes {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+#crossword table {
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+#crossword td {
+    border: 1px solid #ccc;
+    width: 40px;
+    height: 40px;
+}
+
+#crossword input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    color: #e0e0e0;
+}
+  
+#result {
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+#decibel-meter {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#decibel-level {
+    font-weight: bold;
+}

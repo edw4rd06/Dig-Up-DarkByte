@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dig Up DarkByte</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+          background-image: url('images/background2.gif');
+        }
+    </style>
+</head>
+<body>
+    <div id="title-screen" class="screen">
+        <p>You are Alex, a promising cybersecurity student. Your parents run a successful tech company that specializes in developing advanced encryption algorithms. One day, your parents' company falls victim to a devastating cyberattack orchestrated by a notorious hacker known only as "DarkByte."</p>
+        <p>DarkByte's motives are unclear, but the consequences are dire. The hacker breaches the company's security systems, gaining access to sensitive data and proprietary algorithms. The company's reputation is tarnished, and its future hangs in the balance.</p>
+        <p>Determined to uncover the truth and restore your family's honor, you tear through the company server and unravel the mystery behind the cyberattack. Armed with your skills in cybersecurity and a thirst for justice, you must navigate through a series of intricate puzzles and challenges to uncover DarkByte's IP and identity, bringing them to justice.</p>
+        
+        <h1>Dig Up DarkByte</h1>
+        <button onclick="startGame()">Start Game</button>
+
+        <div id="decibel-meter">
+            <p id="decibel-level">Current Decibel Level: <span id="decibel-value">0</span>dB</p>
+        </div>
+    </div>
+    <div id="game" class="screen">
+        <div id="room1" class="room">
+            <h1>Room 1 - Traces</h1>
+            <p>The virus has affected your parents' website background. There appears to be a clue here... it might help with figuring out the IP!</p>
+            <p>Enter the password to proceed to the next room:</p>
+            <p>Hint: Binary, Morse, Hash, Pigpen</p>
+            <div class="clue-image-container">
+                <img src="images/room1_clue.png" alt="Clue Image">
+            </div>
+            <input type="password" id="password1">
+            <button onclick="checkPassword(1)">Submit</button>
+            <p id="error1" class="error"></p>
+        </div>
+        <div id="room2" class="room">
+            <h1>Room 2 - Worm</h1>
+            <p>DarkByte seems to like worms, snakes, and dinosaurs?</p>
+            <p>Collect 7 apples to unlock the next clue.</p>
+            <canvas id="snakeGame" width="400" height="400"></canvas>
+            <p id="appleCount">Apples Collected: 0/7</p>
+            <p id="error2" class="error"></p>
+        </div>
+        <div id="room3" class="room">
+            <h1>Room 3</h1>
+            <p>Complete the cybersecurity crossword puzzle to find the next clue:</p>
+            <p1>Hint: What would a hacker have to bypass in a computer</p1>
+            <div id="crossword">
+                <!-- Crossword puzzle layout -->
+                <table>
+                    <tr>
+                        <td><input type="text" maxlength="1" id="c1"></td>
+                        <td><input type="text" maxlength="1" id="c2"></td>
+                        <td><input type="text" maxlength="1" id="c3"></td>
+                        <td><input type="text" maxlength="1" id="c4"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" maxlength="1" id="c5"></td>
+                        <td><input type="text" maxlength="1" id="c6"></td>
+                        <td><input type="text" maxlength="1" id="c7"></td>
+                        <td><input type="text" maxlength="1" id="c8"></td>
+                    </tr>
+                </table>
+            </div>
+            <button onclick="checkCrossword()">Check Crossword</button>
+            <p id="error3" class="error"></p>
+        </div>
+        <div id="room4" class="room">
+            <h1>Final Room - IP Address</h1>
+            <p>You have gathered all the clues to uncover DarkByte's IP address. Enter the complete IP address to stop the cyberattack:</p>
+            <input type="password" id="ipAddress" placeholder="Enter IP address...">
+            <button onclick="checkIPAddress()">Submit</button>
+            <p id="error4" class="error"></p>
+        </div>
+        <div id="victory" class="room">
+            <h1>Congratulations!</h1>
+            <p>You have successfully uncovered DarkByte's IP address and stopped the cyberattack!</p>
+        </div>
+        <div id="notes-section">
+            <textarea id="notes" rows="2" placeholder="Take notes here..."></textarea>
+        </div>  
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
